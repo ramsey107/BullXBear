@@ -1,5 +1,6 @@
 package com.example.bullxbear
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -18,6 +19,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private val viewModel: StocksViewModel by viewModels()
 
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         supportActionBar?.hide()
@@ -36,8 +38,11 @@ class MainActivity : AppCompatActivity() {
         viewModel.uiStockState.observe(this) { uiStockStateList ->
             adapter.submitList(uiStockStateList)
         }
-        viewModel.uiStockCalculationState.observe(this) {
-
+        viewModel.uiStockCalculationState.observe(this) { data ->
+            binding.viewCalculation.totalCVAmount.text = "₹ ${data.currentValue}"
+            binding.viewCalculation.totalIVAmount.text = "₹ ${data.totalInvestment}"
+            binding.viewCalculation.todayPNLAmount.text = "₹ ${data.todayPnL}"
+            binding.viewCalculation.PNLAmount.text = "₹ ${data.totalPnL}"
         }
     }
 

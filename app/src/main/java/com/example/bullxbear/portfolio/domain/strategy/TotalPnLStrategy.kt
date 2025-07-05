@@ -5,6 +5,6 @@ import com.example.bullxbear.portfolio.source.model.UserHolding
 
 class TotalPnLStrategy: CalculationStrategy {
     override fun calculate(holdings: List<UserHolding>): Double {
-        return Util.getTodayPNL(holdings)
+        return Util.getTotalPNL(holdings)
     }
 }

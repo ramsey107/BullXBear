@@ -3,8 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_margin="8dp"
-    app:cardCornerRadius="12dp"
+    android:backgroundTint="@color/white"
+    android:layout_margin="1dp"
+    app:cardCornerRadius="2dp"
     app:cardElevation="4dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -27,6 +28,7 @@
         <TextView
             android:id="@+id/tvLTP"
             android:text="LTP: ₹3,200"
+            android:textColor="@android:color/black"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="4dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -37,9 +39,11 @@
         <TextView
             android:id="@+id/tvQuantity"
             android:text="Qty: 20"
+            android:textColor="@android:color/black"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="@id/tvSymbol"
+
             android:layout_marginTop="36dp"
             android:layout_marginBottom="8dp"
             android:layout_marginStart="4dp"

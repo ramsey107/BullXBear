@@ -29,19 +29,26 @@ class StocksViewModel @Inject constructor(
     private var _uiStockCalculationState = MutableLiveData<UiStockCalculationState>()
     val uiStockCalculationState: LiveData<UiStockCalculationState> = _uiStockCalculationState
 
+    private val _isLoading = MutableLiveData<Boolean>()
+    val isLoading: LiveData<Boolean> = _isLoading
+
     init {
         viewModelScope.launch(Dispatchers.IO) {
-            Log.d("TAG", "holdingsUseCase")
+            _isLoading.postValue(true)
+
+            var isFirstTime = true
             while (isActive) {
                 val holdings = holdingsUseCase.getStocksUseCase().data
                 val uiStockCalculationState = getUiStockCalculationState(holdingsUseCase, holdings)
                 val uiStockState = getUiStockStateList(holdings)
 
-                Log.d("TAG",uiStockState.toString())
-                Log.d("TAG",uiStockCalculationState.toString())
-
                 _uiStockState.postValue(uiStockState)
                 _uiStockCalculationState.postValue(uiStockCalculationState)
+
+                if (isFirstTime) {
+                    _isLoading.postValue(false)
+                    isFirstTime = false
+                }
 
                 delay(REFRESH_INTERVAL_MS)
             }
