@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_watchlist"
+        android:title="@string/watchlist"
+        android:icon="@drawable/watchlist"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_orders"
+        android:title="@string/orders"
+        android:icon="@drawable/orders"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_portfolio"
+        android:title="@string/portfolio"
+        android:icon="@drawable/portfolio"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_funds"
+        android:title="@string/funds"
+        android:icon="@drawable/funds"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_invest"
+        android:title="@string/invest"
+        android:icon="@drawable/invest"
+        app:showAsAction="ifRoom" />
+</menu>

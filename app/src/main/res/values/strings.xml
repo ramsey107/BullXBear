@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">BullXBear</string>
+    <string name="toolbar_title">Profile</string>
+    <string name="watchlist">Watchlist</string>
+    <string name="orders">Orders</string>
+    <string name="funds">Funds</string>
+    <string name="invest">Invest</string>
+    <string name="portfolio">Portfolio</string>
+</resources>
